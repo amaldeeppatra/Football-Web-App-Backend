@@ -4,6 +4,7 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const cors = require("cors");
 const bodyParser = require('body-parser');
+const path = require("path");
 
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
@@ -18,8 +19,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 
+app.set("view engine", "ejs");
+app.set("views", path.resolve("./views"));
+
 
 app.use("/api", require('./routes/api/index'));
+
+app.use("/admin", require("./routes/admin"));
+app.use("/data", require("./routes/data"));
 
 
 app.listen(PORT, () => console.log(`Server running at ${PORT}`));
