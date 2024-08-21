@@ -1,7 +1,7 @@
 const multer = require('multer');
 const XLSX = require('xlsx');
 const fs = require('fs');
-const RecentLaligaMatches = require('../../../../models/data/league/recentLaligamatches');
+const RecentLaligaMatches = require('../../../../models/data/league/recentLaligaMatches');
 
 // Function to convert Excel date serial to a JavaScript Date object
 function excelDateToJSDate(serial) {
