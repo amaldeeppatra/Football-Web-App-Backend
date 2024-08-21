@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     const recentMatches = await RecentMatches.find();
     
     // Send the fetched data as a JSON response
-    res.json(recentMatches);
+    res.status(200).json(recentMatches);
   } catch (error) {
     // Handle any errors that occur during the fetch
     console.error('Error fetching recent matches:', error);
