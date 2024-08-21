@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const recentMatchesSchema = new Schema({
+const recentEPLMatchesSchema = new Schema({
     teamLogo: {
         type: String,
         required: true
@@ -31,6 +31,6 @@ const recentMatchesSchema = new Schema({
     }
 }, {timestamps: true});
 
-const RecentMatches = model("recentmatches", recentMatchesSchema);
+const RecentEPLMatches = model("recentEPLmatches", recentEPLMatchesSchema);
 
-module.exports = RecentMatches;
+module.exports = RecentEPLMatches;

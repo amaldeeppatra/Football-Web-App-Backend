@@ -12,8 +12,8 @@ const { checkForAuthenticationCookie } = require("./middlewares/authentication")
 
 mongoose.connect(process.env.mongodbURL).then((e) => console.log("Mongodb connected"))
 
-app.use(cors({ origin: 'https://fieldfuse.vercel.app', credentials: true }));
-// app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+// app.use(cors({ origin: 'https://fieldfuse.vercel.app', credentials: true }));
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 app.use(bodyParser.json());
 app.use(express.json());

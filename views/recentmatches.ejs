@@ -7,7 +7,15 @@
 </head>
 <body>
     <h1>Recent Matches</h1>
-    <form action="/data/recent-matches" method="post" enctype="multipart/form-data">
+    <h2>EPL</h2>
+    <form action="/data/recent-matches-epl" method="post" enctype="multipart/form-data">
+        <label for="">Upload the Excel sheet</label>
+        <br>
+        <input type="file" name="file" id="">
+        <button>Submit</button>
+    </form>
+    <h2>Laliga</h2>
+    <form action="/data/recent-matches-laliga" method="post" enctype="multipart/form-data">
         <label for="">Upload the Excel sheet</label>
         <br>
         <input type="file" name="file" id="">

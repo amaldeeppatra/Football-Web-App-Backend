@@ -1,7 +1,7 @@
 const multer = require('multer');
 const XLSX = require('xlsx');
 const fs = require('fs');
-const RecentEPLMatches = require('../../../../models/data/league/recentEPLmatches');
+const RecentLaligaMatches = require('../../../../models/data/league/recentLaligamatches');
 
 // Function to convert Excel date serial to a JavaScript Date object
 function excelDateToJSDate(serial) {
@@ -19,7 +19,7 @@ function excelDateToJSDate(serial) {
 
 // Endpoint to upload and process the Excel file
 
-async function recentEPLMatchesData(req, res) {
+async function recentLaligaMatchesData(req, res) {
   try {
     // Log the file path to ensure it's being uploaded correctly
     console.log('Uploaded file path:', req.file.path);
@@ -64,7 +64,7 @@ async function recentEPLMatchesData(req, res) {
       console.log('Update:', update);
 
       // Perform the database update
-      const result = await RecentEPLMatches.findOneAndUpdate(filter, update, options);
+      const result = await RecentLaligaMatches.findOneAndUpdate(filter, update, options);
       console.log('Update Result:', result); // Log the result of the update
     }
 
@@ -78,4 +78,4 @@ async function recentEPLMatchesData(req, res) {
   }
 };
 
-module.exports = { recentEPLMatchesData };
+module.exports = { recentLaligaMatchesData };

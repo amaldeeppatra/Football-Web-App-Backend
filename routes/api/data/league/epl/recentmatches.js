@@ -1,12 +1,12 @@
 const express = require('express');
-const RecentMatches = require('../../../models/data/recentmatches'); // Import the RecentMatches model
+const recentLaligaMatchesSchema = require('../../../../../models/data/league/recentLaligamatches'); // Import the RecentMatches model
 const router = express.Router();
 
 // Define a route to fetch all recent matches
 router.get('/', async (req, res) => {
   try {
     // Fetch all recent matches from the database
-    const recentMatches = await RecentMatches.find();
+    const recentMatches = await recentLaligaMatchesSchema.find();
     
     // Send the fetched data as a JSON response
     res.status(200).json(recentMatches);

@@ -1,5 +1,5 @@
 const express = require('express');
-const Laliga = require('../../../../models/data/league/laliga');
+const Laliga = require('../../../../../models/data/league/epl');
 const router = express.Router();
 
 router.get('/', async (req, res) => {

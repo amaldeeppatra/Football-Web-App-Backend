@@ -1,7 +1,7 @@
 const multer = require('multer');
 const XLSX = require('xlsx');
 const fs = require('fs');
-const Laliga = require('../../../models/data/league/laliga');
+const Laliga = require('../../../../models/data/league/laliga');
 
 
 // Endpoint to upload and process the Excel file

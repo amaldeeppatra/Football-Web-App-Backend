@@ -2,9 +2,10 @@ const express = require('express');
 const { eplData } = require('../controllers/data/league/epl/epl');
 const router = express.Router();
 const multer = require('multer');
-const { laligaData } = require('../controllers/data/league/laliga');
+const { laligaData } = require('../controllers/data/league/laliga/laliga');
 const { newsData } = require('../controllers/data/news/news');
-const { recentMatchesData } = require('../controllers/data/league/epl/recentmatches');
+const { recentEPLMatchesData } = require('../controllers/data/league/epl/recentmatches');
+const { recentLaligaMatchesData } = require('../controllers/data/league/laliga/recentmatches');
 const upload = multer({ dest: '../uploads' });
 
 
@@ -34,7 +35,8 @@ router.post("/laliga", upload.single('file'), laligaData);
 
 router.post("/news", upload.single('file'), newsData);
 
-router.post("/recent-matches", upload.single('file'), recentMatchesData);
+router.post("/recent-matches-epl", upload.single('file'), recentEPLMatchesData);
+router.post("/recent-matches-laliga", upload.single('file'), recentLaligaMatchesData);
 
 
 module.exports = router;
