@@ -13,5 +13,7 @@ router.use('/news', require('./data/news'))
 router.use('/epl/recent-matches', require('./data/league/epl/recentmatches'))
 router.use('/laliga/recent-matches', require('./data/league/laliga/recentmatches'))
 
+router.use('/profile', require('./profile'));
+
 
 module.exports = router; // Ensure you are exporting the router
